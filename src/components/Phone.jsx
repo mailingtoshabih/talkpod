@@ -29,7 +29,7 @@ export const Phone = ({ onNext }) => {
                     phone: data.phone,
                     hash: data.hash
                 }))
-                console.log(data.otp)
+                alert(data.otp)
             }
             catch (exc) {
                 console.log(exc.message)

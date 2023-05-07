@@ -48,7 +48,7 @@ export const Otp = () => {
           },
           { withCredentials: true })
           .then(() => {
-            dispatch(setAuth(data.newuser));
+            dispatch(setAuth(data?.newuser));
             navigate("/rooms");
           })
 

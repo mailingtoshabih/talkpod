@@ -33,6 +33,10 @@ export const Otp = () => {
   const dispatch = useDispatch();
 
 
+  const go = (data) => {
+    dispatch(setAuth(data));
+    navigate("/rooms");
+  }
 
 
   const handleOtp = async (e) => {
@@ -46,11 +50,9 @@ export const Otp = () => {
             Hash: hash,
             Phone: phone
           },
-          { withCredentials: true })
-          .then(() => {
-            dispatch(setAuth(data?.newuser));
-            navigate("/rooms");
-          })
+          { withCredentials: true });
+          
+        data && go(data.newuser)
 
       }
     }

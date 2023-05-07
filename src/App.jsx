@@ -31,8 +31,8 @@ function App() {
   // this function is used as an element below
   const check = () => {
     if (isActive && isAuth) return <Allrooms/>;
-    else if (isAuth) return <Activation/>;
-    else return <Register/>;
+    else if (isAuth ) return <Activation/>;
+    else return <Home/>;
   }
 
 

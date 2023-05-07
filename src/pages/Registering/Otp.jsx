@@ -44,16 +44,15 @@ export const Otp = () => {
 
     try {
       if (otp) {
-        const { data } = await axios.post(`${backend}/auth/verifyotp`,
+        const { data } = axios.post(`${backend}/auth/verifyotp`,
           {
             Otp: otp,
             Hash: hash,
             Phone: phone
           },
           { withCredentials: true });
-          
-        data && go(data.newuser)
 
+        data && go(data.newuser)
       }
     }
     catch (exc) {

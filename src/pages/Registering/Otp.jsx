@@ -1,5 +1,5 @@
 import { Navbar } from "../../components/Navbar"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { useSelector } from 'react-redux';
 import axios from 'axios';
@@ -26,7 +26,7 @@ const backend = import.meta.env.VITE_APP_BACKEND;
 
 export const Otp = () => {
 
-
+  const navigate = useNavigate();
   const { phone, hash } = useSelector((state) => state.auth);
 
   const [otp, setOtp] = useState("");
@@ -46,9 +46,12 @@ export const Otp = () => {
             Hash: hash,
             Phone: phone
           },
-          { withCredentials: true });
+          { withCredentials: true })
+          .then(() => {
+            dispatch(setAuth(data.newuser));
+            navigate("/rooms");
+          })
 
-        data && dispatch(setAuth(data.newuser));
       }
     }
     catch (exc) {
@@ -67,7 +70,7 @@ export const Otp = () => {
 
   return (
     <div>
-      
+
       <div className='my-36 h-72 w-full sm:w-[32rem] px-2 sm:px-20 py-8 text-white mx-auto text-center  bg-gradient-to-r from-fuchsia-500 via-violet-600 to-rose-500 rounded-lg hover:shadow-2xl hover:shadow-fuchsia-500  duration-1000'>
 
         <p className='font-semibold'>Enter the code we just sent you ☎️</p>

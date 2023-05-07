@@ -112,7 +112,7 @@ export const useWebrtc = (roomId, user) => {
                     );
                 }
 
-
+                console.log(connections.current[peerId])
                 // Store it to connections
                 connections.current[peerId] = new RTCPeerConnection({
                     iceServers: freeice(),

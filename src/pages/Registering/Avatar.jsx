@@ -36,9 +36,10 @@ export const Avatar = ({ onNext }) => {
   
   
   const go = (data) => {
+    console.log(data);
     dispatch(setAuth(data));
     navigate("/rooms");
-    console.log(data);
+    
   }
   
   const handleAvatar = async (e) => {

@@ -44,7 +44,7 @@ export const Otp = () => {
 
     try {
       if (otp) {
-        const { data } = axios.post(`${backend}/auth/verifyotp`,
+        const { data } = await axios.post(`${backend}/auth/verifyotp`,
           {
             Otp: otp,
             Hash: hash,

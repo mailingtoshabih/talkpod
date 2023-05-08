@@ -49,7 +49,7 @@ function App() {
     },
     {
       path: "/rooms",
-      element: isActive ? <Allrooms /> : <Login />,
+      element: isActive ? <Allrooms /> : <Activation />,
       errorElement: <Errorpage />
     },
     {

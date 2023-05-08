@@ -35,6 +35,12 @@ export const Avatar = ({ onNext }) => {
   // }
   
   
+  const go = (data) => {
+    dispatch(setAuth(data));
+    navigate("/rooms");
+    console.log(data);
+  }
+  
   const handleAvatar = async (e) => {
     e.preventDefault();
     if (!pic) return;
@@ -49,8 +55,7 @@ export const Avatar = ({ onNext }) => {
       const res = await axios.post(`${backend}/auth/activate`, { name, pic : imgurl },
       { withCredentials: true });
 
-      res && dispatch( setAuth(res.data) )
-      res && navigate("/rooms");
+      res && go(res.data);
     }
     catch(e) { console.log(e.message) }
 

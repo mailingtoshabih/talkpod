@@ -56,7 +56,7 @@ export const Avatar = ({ onNext }) => {
       const res = await axios.post(`${backend}/auth/activate`, { name, pic : imgurl },
       { withCredentials: true });
 
-      res && console.log(res);
+      res && console.log(res.data);
     }
     catch(e) { console.log(e.message) }
 

@@ -97,7 +97,7 @@ export const Room = () => {
                                 <div key={client._id}
                                     className='w-fit rounded-lg bg-white h-fit text-center'>
 
-                                    <audio controls
+                                    <audio 
                                         ref={(instance) => provideRef(instance, client._id)}
                                         autoPlay
                                         muted = {false}

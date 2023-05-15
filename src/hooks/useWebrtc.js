@@ -65,7 +65,7 @@ export const useWebrtc = (roomId, user) => {
                 const localElement = audioElements.current[user._id];
                 
                 if (localElement) {
-                    localElement.volume = 5;
+                    localElement.volume = 1;
                     localElement.srcObject = localMediaStream.current;
                 }
             });

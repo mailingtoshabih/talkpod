@@ -143,15 +143,15 @@ export const useWebrtc = (roomId, user) => {
                                 isMute: currentUser.muted,
                             });
                         }
-                        if (audioElements.current[remoteUser.id]) {
-                            audioElements.current[remoteUser.id].srcObject =
+                        if (audioElements.current[remoteUser._id]) {
+                            audioElements.current[remoteUser._id].srcObject =
                                 remoteStream;
                         } else {
                             let settled = false;
                             const interval = setInterval(() => {
-                                if (audioElements.current[remoteUser.id]) {
+                                if (audioElements.current[remoteUser._id]) {
                                     audioElements.current[
-                                        remoteUser.id
+                                        remoteUser._id
                                     ].srcObject = remoteStream;
                                     settled = true;
                                 }

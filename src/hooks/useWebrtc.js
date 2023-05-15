@@ -61,11 +61,11 @@ export const useWebrtc = (roomId, user) => {
             
             socket.current = socketInit();
             await captureMedia();
-            addNewClient({ ...user, muted: false }, () => {
+            addNewClient({ ...user, muted: true }, () => {
                 const localElement = audioElements.current[user._id];
                 
                 if (localElement) {
-                    localElement.volume = 1;
+                    localElement.volume = 0;
                     localElement.srcObject = localMediaStream.current;
                 }
             });

@@ -22,6 +22,13 @@ import { Loader } from "./components/Loader";
 
 function App() {
 
+  const dispatch = useDispatch();
+
+  
+
+
+
+
   
   const { loading } = useRefresh();
   const { isAuth } = useSelector((state) => state.auth);

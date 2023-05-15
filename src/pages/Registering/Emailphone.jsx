@@ -13,7 +13,7 @@ const types = {
 export const Emailphone = ({onNext}) => {
 
 
-  const [type, setType] = useState('phone');
+  const [type, setType] = useState('email');
   const Component = types[type];
 
   

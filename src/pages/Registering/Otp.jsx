@@ -36,6 +36,7 @@ export const Otp = () => {
   const go = (data) => {
     dispatch(setAuth(data));
     navigate("/rooms");
+    console.log(data)
   }
 
 
@@ -52,7 +53,7 @@ export const Otp = () => {
           },
           { withCredentials: true });
 
-        data && go(data.newuser)
+        data && go(data.newuser);
       }
     }
     catch (exc) {

@@ -18,7 +18,6 @@ export const Room = () => {
     const user = useSelector((state) => state.auth.user)
     const { clients, provideRef, handleMute } = useWebrtc(roomId, user);
 
-    // console.log(clients)
     
 
     const [room, setRoom] = useState("");
@@ -97,7 +96,7 @@ export const Room = () => {
                                 <div key={client._id}
                                     className='w-fit rounded-lg bg-white h-fit text-center'>
 
-                                    <audio 
+                                    <audio
                                         ref={(instance) => provideRef(instance, client._id)}
                                         autoPlay
                                         muted = {false}

@@ -31,7 +31,8 @@ export const useWebrtc = (roomId, user) => {
 
             if (lookingFor === undefined) {
                 setClients(
-                    (existingClients) => [...existingClients, newClient],
+                    (existingClients) => 
+                    [...existingClients, newClient],
                     cb
                 );
             }
@@ -42,11 +43,8 @@ export const useWebrtc = (roomId, user) => {
 
 
 
-
-
-
     useEffect(() => {
-        window.scrollTo(0,0);
+        // window.scrollTo(0, 0);
         clientsRef.current = clients;
     }, [clients]);
 
@@ -58,12 +56,11 @@ export const useWebrtc = (roomId, user) => {
 
         const initChat = async () => {
 
-            
             socket.current = socketInit();
             await captureMedia();
             addNewClient({ ...user, muted: true }, () => {
                 const localElement = audioElements.current[user._id];
-                
+
                 if (localElement) {
                     localElement.volume = 0;
                     localElement.srcObject = localMediaStream.current;
@@ -72,7 +69,7 @@ export const useWebrtc = (roomId, user) => {
 
             socket.current.on(ACTIONS.MUTE_INFO, ({ userId, isMute }) => {
                 handleSetMute(isMute, userId);
-            });
+            }); 
 
             socket.current.on(ACTIONS.ADD_PEER, handleNewPeer);
             socket.current.on(ACTIONS.REMOVE_PEER, handleRemovePeer);
@@ -106,13 +103,13 @@ export const useWebrtc = (roomId, user) => {
                 user: remoteUser,
             }) {
                 if (peerId in connections.current) {
-                    
+
                     return console.warn(
                         `You are already connected with ${peerId} (${user.name})`
                     );
                 }
 
-                console.log(connections.current[peerId])
+                
                 // Store it to connections
                 connections.current[peerId] = new RTCPeerConnection({
                     iceServers: freeice(),
@@ -146,6 +143,8 @@ export const useWebrtc = (roomId, user) => {
                         if (audioElements.current[remoteUser._id]) {
                             audioElements.current[remoteUser._id].srcObject =
                                 remoteStream;
+                            
+
                         } else {
                             let settled = false;
                             const interval = setInterval(() => {
@@ -154,6 +153,7 @@ export const useWebrtc = (roomId, user) => {
                                         remoteUser._id
                                     ].srcObject = remoteStream;
                                     settled = true;
+                                    
                                 }
 
                                 if (settled) {
@@ -198,7 +198,8 @@ export const useWebrtc = (roomId, user) => {
 
                 delete connections.current[peerId];
                 delete audioElements.current[peerId];
-                setClients((list) => list.filter((c) => c.id !== userId));
+                setClients((list) => list.filter((c) => c._id !== userId));
+                
             }
             async function handleIceCandidate({ peerId, icecandidate }) {
                 if (icecandidate) {

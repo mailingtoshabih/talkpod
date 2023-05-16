@@ -36,7 +36,6 @@ export const Otp = () => {
   const go = (data) => {
     dispatch(setAuth(data));
     navigate("/rooms");
-    console.log(data)
   }
 
 

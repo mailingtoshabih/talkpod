@@ -33,21 +33,24 @@ export const Name = ({ onNext }) => {
     <div>
       <Navbar/>
 
-      <div className='my-36 h-72 w-full sm:w-[32rem] px-2 sm:px-20 py-8 mx-auto text-white text-center  bg-gradient-to-r from-fuchsia-500 via-violet-600 to-rose-500 rounded-lg hover:shadow-2xl hover:shadow-fuchsia-500  duration-1000'>
+      <div className='my-36 h-80 w-full sm:w-[32rem] px-2 sm:px-20 py-8 mx-auto text-white text-center  
+      bg-gradient-to-r from-violet-950 to-purple-600 sm:rounded-lg 
+      hover:shadow-2xl hover:shadow-violet-900  duration-1000'>
 
-        <p className='font-semibold'>😀What is your Name ? </p>
+        <p className='font-semibold text-xl sm:text-2xl'>😀What is your Name ? </p>
 
 
         <div className='mt-5'>
 
           <input
-            className='my-5 mx-auto block w-52 sm:w-72 p-2 text-center rounded-lg outline-none text-gray-600 font-semibold'
+            className='my-5 mx-auto block w-full p-2 text-center rounded-lg outline-none text-gray-600 font-semibold'
             type="text"
             spellCheck={false}
             onChange={(e) => setFullname(e.target.value)}
           />
 
-          <button onClick={handleName} className='bg-white px-3 py-2 text-violet-600 text-sm font-semibold rounded-full'>
+          <button onClick={handleName} 
+            className='bg-white px-3 py-2 text-violet-900 text-sm font-bold rounded-full'>
             Next
           </button>
 

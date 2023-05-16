@@ -33,7 +33,7 @@ function App() {
   const { loading } = useRefresh();
   const { isAuth } = useSelector((state) => state.auth);
   const isActive = useSelector((state) => state.auth?.user?.activated);
-
+  
 
   // this function is used as an element below
   const check = () => {

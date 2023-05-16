@@ -2,11 +2,10 @@ import logo from "../assets/default.jpg"
 import { useNavigate } from "react-router-dom"
 import { useEffect } from "react";
 
-const style = `p-3 sm:p-4 w-66 h-32 sm:h-44 text-xs sm:text-sm md:text-md font-semibold text-gray-600 rounded-xl cursor-pointer bg-white 
-shadow-[0px_0px_20px_1px_#B2F5EA] hover:shadow-violet-400
-hover:bg-violet-900 hover:text-white
-hover:transition duration-700
-`
+const style = `p-3 sm:p-4 w-66 h-36 sm:h-44 text-xs sm:text-sm md:text-md font-semibold text-gray-600 rounded-xl cursor-pointer bg-white 
+shadow-[0px_0px_20px_1px_#B2F5EA] hover:shadow-violet-500
+hover:transition duration-700 
+hover:outline hover:outline-violet-800`
 
 
 
@@ -21,11 +20,6 @@ export const Roomcard = ({ data }) => {
 
   const navigate = useNavigate();
   
-  // useEffect(()=>{
-  //   console.log(data)
-  // })
-
-
 
 
   return (

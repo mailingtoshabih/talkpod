@@ -38,7 +38,6 @@ export const Email = () => {
                     email,
                     pass
                 );
-                console.log(user)
 
                 const { data } = await axios.post(`${backend}/auth/signup`, { email });
                 data && dispatch(setAuth(data));
@@ -62,16 +61,18 @@ export const Email = () => {
         <>
             <div>
 
-                <div className='mt-20 h- text-white  px-20 py-10 mx-auto w-fit text-center bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg hover:shadow-2xl hover:shadow-cyan-500 duration-1000'>
+                <div className='my-36 h-80 text-white  px-2 sm:px-20 py-5 mx-auto w-full sm:w-[32rem] text-center 
+                bg-gradient-to-r from-violet-950 to-purple-900 sm:rounded-lg 
+                hover:shadow-2xl hover:shadow-violet-600 duration-1000'>
 
-                    <p className='font-semibold'>Signup For Talkpod</p>
+                    <p className='font-semibold text-xl sm:text-2xl'>Signup For Talkpod</p>
 
 
                     <div className='mt-5'>
 
 
                         <input
-                            className='my-5 block w-72 p-2 text-center rounded-md outline-none text-gray-600 font-semibold placeholder:text-gray-400'
+                            className='my-5 h-12 block w-full p-2 text-center rounded-md outline-none text-gray-600 font-semibold placeholder:text-gray-400'
                             placeholder='example@gmail.com'
                             type="email"
                             onChange={(e) => setEmail(e.target.value)}
@@ -79,13 +80,13 @@ export const Email = () => {
 
 
                         <input
-                            className='my-5 block w-72 p-2 text-center rounded-md outline-none text-gray-600 font-semibold'
+                            className='my-5 block h-12 w-full mx-auto p-2 text-center rounded-md outline-none text-gray-600 font-semibold'
                             type="password"
                             placeholder='******'
                             onChange={(e) => setPassword(e.target.value)}
                         />
 
-                        <button className='bg-white px-4 py-2 text-violet-600 text-sm font-semibold rounded-full'
+                        <button className='bg-white px-4 py-2 text-violet-900 text-sm font-bold rounded-full'
                             onClick={handleSubmit}>
                             Next
                         </button>

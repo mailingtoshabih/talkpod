@@ -22,7 +22,7 @@ export const Navbar = () => {
         try {
             const res = await axios.get(backend + "/auth/logout", { withCredentials: true });
             res && dispatch(setAuth());
-            // res && console.log(res.data)
+          
         }
         catch (exc) {
             console.log(exc.message)
@@ -46,11 +46,11 @@ export const Navbar = () => {
 
                     <div className="font-bold text-lg sm:text-xl md:text-2xl my-auto">
                         <Link to={'/'} className="flex text-gray-900">
-                            <span className="text-violet-700 text-3xl">🦜</span>
+                            <span className="text-violet-700 text-3xl">📢</span>
 
                             <div className="my-auto">
-                                <span className="text-gray-700">talk</span>
-                                <span className="text-violet-900">Pod</span>
+                                <span className="text-gray-700">Talk</span>
+                                <span className="text-violet-900">pod</span>
                             </div>
                         </Link>
                     </div>

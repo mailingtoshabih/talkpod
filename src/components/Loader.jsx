@@ -8,35 +8,54 @@ export const Loader = () => {
             {/* <Navbar/> */}
 
 
+            <p className='w-fit mx-auto p-5 text-5xl sm:text-7xl font-extrabold 
+            text-gray-200 animate-pulse'>Talkpod</p>
 
 
+            <div className='h-screen w-full  text-white mx-auto text-center duration-1000
+                my-2 p-5'>
 
-            <div className='my-36 h-72 w-full sm:w-[32rem] px-3 sm:px-20 py-8 text-white mx-auto text-center duration-1000'>
+                <div className='bg-violet-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
 
-                <p className='font-bold text-violet-500 text-xl sm:text-2xl'>
-                    Take a breath 😤
-                </p>
-
-                <div className='mt-10 flex justify-between'>
-
-                    <div className="w-12 h-12 mx-auto rounded-full animate-spin
-                        border-8 border-solid border-green-600 border-t-transparent">
-                    </div>
-
-                    <div className="hidden sm:block w-12 h-12 mx-auto rounded-full animate-spin
-                        border-8 border-solid border-yellow-300 border-t-transparent">
-                    </div>
-
-                    <div className="w-12 h-12 mx-auto rounded-full animate-spin
-                        border-8 border-solid border-rose-500 border-t-transparent">
-                    </div>
-
-
+                <div className='flex space-x-5 mt-5'>
+                    <div className='bg-purple-100 h-20 w-36 rounded-full animate-pulse'></div>
+                    <div className='bg-red-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
                 </div>
 
 
-                <p className='mt-10 text-sm font-bold text-violet-500'>Processing...</p>
+                <div className='bg-yellow-100 h-20 w-full rounded-lg animate-pulse mt-5 text-3xl font-extrabold'>
+                    <p className='mx-auto w-fit'>Loading</p>
+                </div>
+
+                <div className='flex space-x-5 mt-5'>
+                    <div className='bg-pink-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
+                    <div className='bg-purple-100 h-20 w-36 rounded-full animate-pulse'></div>
+                </div>
+
+                <div className='flex space-x-5 mt-5'>
+                    <div className='bg-blue-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
+                    <div className='bg-green-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
+                </div>
+
+                <div className='bg-yellow-100 h-20 w-full rounded-lg animate-pulse mt-5 text-3xl font-extrabold'>
+                    <p className='mx-auto w-fit'>Loading</p>
+                </div>
+
+                <div className='flex space-x-5 mt-5'>
+                    <div className='bg-pink-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
+                    <div className='bg-purple-100 h-20 w-36 rounded-full animate-pulse'></div>
+                </div>
+
+                <div className='flex space-x-5 mt-5'>
+                    <div className='bg-blue-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
+                    <div className='bg-green-100 h-20 w-full rounded-lg animate-pulse'>Loading</div>
+                </div>
+
+                <div className='h-10'></div>
+
             </div>
+
+            
 
         </>
     )

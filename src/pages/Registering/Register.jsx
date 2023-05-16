@@ -31,7 +31,7 @@ export const Register = () => {
     return (
         <div className='font-poppins'>
 
-            <Navbar />
+            {/* <Navbar /> */}
 
             <div>
 

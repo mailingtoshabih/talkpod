@@ -5,7 +5,7 @@ import {
 import { Home } from "./pages/Home";
 import { Errorpage } from './pages/Errorpage';
 import { Register } from './pages/Registering/Register';
-import { Login } from './pages/Login';
+import { Login } from './pages/Registering/Login';
 import { Allrooms } from './pages/Allrooms';
 import { Room } from './pages/Room';
 import { useRefresh } from './hooks/useRefresh';
@@ -68,7 +68,13 @@ function App() {
       path: "/register",
       element: isAuth ? <Activation /> : <Register />,
       errorElement: <Errorpage />
+    },
+    {
+      path: "/login",
+      element: isActive ? <Allrooms /> : <Login />,
+      errorElement: <Errorpage />
     }
+
   ]);
 
 

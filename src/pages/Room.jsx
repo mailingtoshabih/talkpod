@@ -64,8 +64,8 @@ export const Room = () => {
 
                 <div className='my-5 sm:my-10 flex justify-between'>
                     <div className='font-semibold text-gray-700 text-xl md:text-2xl xl:text-3xl my-auto'>
-                        {/* {room && room.roomTopic} */}
-                        Why Artificial Intelligence is the future?
+                        {room && room.roomTopic}
+                        {/* Why Artificial Intelligence is the future? */}
                     </div>
 
                     <button className="text-xs sm:text-sm w-fit h-12 p-1 px-4 text-center rounded-full text-white font-semibold  bg-gradient-to-r from-orange-600 to-red-600 shadow-lg hover:shadow-2xl shadow-orange-600 hover:shadow-orange-600 duration-700" onClick={() => navigate(-1)}>

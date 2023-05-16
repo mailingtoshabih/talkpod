@@ -1,16 +1,28 @@
 import React from 'react'
 import { Navbar } from "./Navbar"
 import { Link } from 'react-router-dom'
+import left from "../assets/left.png"
+import right from "../assets/right.png"
 
 
 
 export const Welcomecard = () => {
     return (
-        <>
-            <Navbar />
-            
-            <div className='my-36 h-80 w-full sm:w-[32rem] px-2 sm:px-20 py-8  
-            text-white mx-auto text-center
+        <div className='h-screen border bg-hero bg-no-repeat bg-cover bg-center bg-fixed'>
+            {/* <Navbar /> */}
+
+
+            <p className='mt-20 h-fit text-violet-950 font-extrabold text-7xl
+                text-center'>
+                Talkpod
+            </p>
+
+
+
+
+
+            <div className='my-5 shrink-0 h-80 w-full sm:w-[32rem] px-2 sm:px-20 py-8  
+            text-white mx-auto text-center 
             bg-gradient-to-r from-violet-950 to-purple-600 sm:rounded-lg 
             hover:shadow-2xl hover:shadow-violet-900 duration-1000'>
 
@@ -46,6 +58,18 @@ export const Welcomecard = () => {
                     </div>
                 </div>
             </div>
-        </>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     )
 }

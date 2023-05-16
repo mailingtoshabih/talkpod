@@ -17,7 +17,7 @@ export const Name = ({ onNext }) => {
   const [fullname, setFullname] = useState(name);
 
 
-  
+
   const handleName = (e) => {
     e.preventDefault();
     if (!fullname) return;
@@ -30,10 +30,21 @@ export const Name = ({ onNext }) => {
 
 
   return (
-    <div>
-      <Navbar/>
+    <div className="h-screen border bg-hero bg-no-repeat bg-cover bg-center bg-fixed">
+      {/* <Navbar /> */}
 
-      <div className='my-36 h-80 w-full sm:w-[32rem] px-2 sm:px-20 py-8 mx-auto text-white text-center  
+
+
+      <p className='mt-20 h-fit text-violet-950 font-extrabold text-7xl
+                text-center'>
+        Talkpod
+      </p>
+
+
+
+
+
+      <div className='my-5 h-80 w-full sm:w-[32rem] px-2 sm:px-20 py-8 mx-auto text-white text-center  
       bg-gradient-to-r from-violet-950 to-purple-600 sm:rounded-lg 
       hover:shadow-2xl hover:shadow-violet-900  duration-1000'>
 
@@ -49,7 +60,7 @@ export const Name = ({ onNext }) => {
             onChange={(e) => setFullname(e.target.value)}
           />
 
-          <button onClick={handleName} 
+          <button onClick={handleName}
             className='bg-white px-3 py-2 text-violet-900 text-sm font-bold rounded-full'>
             Next
           </button>

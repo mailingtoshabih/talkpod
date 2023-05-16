@@ -8,7 +8,11 @@ export default {
     extend: {
       fontFamily: {
         poppins: ['Figtree', 'sans-serif'],
-      }
+      },
+      backgroundImage: {
+        'hero': "url('./src/assets/Untitled.png')",
+      },
+
     },
   },
   plugins: [],

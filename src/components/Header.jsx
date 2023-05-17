@@ -70,11 +70,9 @@ export const Header = () => {
                     <div className='mt-5'>
                         <button
                             onClick={() => dispatch(toggleModal(true))}
-                            className='block text-xs  md:hidden w-fit h-10 my-3 mx-auto p-1 px-3 text-center rounded-full text-white font-semibold border-4  bg-gradient-to-r from-violet-700 to-purple-700 hover:border-violet-700  hover:text-white hover:shadow-2xl hover:shadow-violet-500 duration-700'>
+                            className='block text-xs  md:hidden w-fit h-10 my-3 mx-auto p-1 px-3 text-center rounded-full text-white font-semibold border-4 border-white  bg-gradient-to-r from-violet-700 to-purple-700 hover:border-violet-700  hover:text-white hover:shadow-2xl hover:shadow-violet-500 duration-700'>
                             Start a podcast
                         </button>
-
-
                     </div>
 
                 </div>

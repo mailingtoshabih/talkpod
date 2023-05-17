@@ -18,7 +18,7 @@ export const Room = () => {
     const user = useSelector((state) => state.auth.user)
     const { clients, provideRef, handleMute } = useWebrtc(roomId, user);
 
-    
+
 
     const [room, setRoom] = useState("");
 
@@ -35,7 +35,7 @@ export const Room = () => {
 
     const [isMute, setMute] = useState(true);
 
-    
+
 
     useEffect(() => {
         handleMute(isMute, user._id);
@@ -78,15 +78,15 @@ export const Room = () => {
                 {/* change id to _id */}
                 {/* IN room refresh not persisting problems */}
                 {/* IN room closing tab quits entire room*/}
-{/* grid gap-5 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 shrink-0 */}
+                {/* grid gap-5 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 shrink-0 */}
 
 
 
 
                 <div className='rounded-t-lg 
                      h-full p-2 sm:p-5 
-                     flex flex-wrap space-x-5'>
-
+                    grid grid-cols-2 gap-x-3 sm:flex sm:flex-wrap sm:space-x-5
+                     '>
                     {
                         clients &&
                         clients?.map((client) => {
@@ -99,7 +99,7 @@ export const Room = () => {
                                     <audio
                                         ref={(instance) => provideRef(instance, client._id)}
                                         autoPlay
-                                        muted = {false}
+                                        muted={false}
                                     >
                                     </audio>
 
@@ -117,13 +117,13 @@ export const Room = () => {
                                             {
                                                 client.muted ?
                                                     (
-                                                        <svg className="w-6 h-6 border-2 border-orange-500 rounded-full p-1 text-orange-500 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                        <svg className="w-10 h-7 bg-red-500 rounded-full p-1 text-white mx-auto cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                             <path d="M9.547 3.062A.75.75 0 0110 3.75v12.5a.75.75 0 01-1.264.546L4.703 13H3.167a.75.75 0 01-.7-.48A6.985 6.985 0 012 10c0-.887.165-1.737.468-2.52a.75.75 0 01.7-.48h1.535l4.033-3.796a.75.75 0 01.811-.142zM13.28 7.22a.75.75 0 10-1.06 1.06L13.94 10l-1.72 1.72a.75.75 0 001.06 1.06L15 11.06l1.72 1.72a.75.75 0 101.06-1.06L16.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L15 8.94l-1.72-1.72z" />
                                                         </svg>
                                                     )
                                                     :
                                                     (
-                                                        <svg className="w-6 h-6 border-2 border-green-500 rounded-full p-1 text-green-500 mx-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                                        <svg className="w-10 h-7 bg-green-500  rounded-full p-1 text-white mx-auto cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                             <path d="M10 3.75a.75.75 0 00-1.264-.546L4.703 7H3.167a.75.75 0 00-.7.48A6.985 6.985 0 002 10c0 .887.165 1.737.468 2.52.111.29.39.48.7.48h1.535l4.033 3.796A.75.75 0 0010 16.25V3.75zM15.95 5.05a.75.75 0 00-1.06 1.061 5.5 5.5 0 010 7.778.75.75 0 001.06 1.06 7 7 0 000-9.899z" />
                                                             <path d="M13.829 7.172a.75.75 0 00-1.061 1.06 2.5 2.5 0 010 3.536.75.75 0 001.06 1.06 4 4 0 000-5.656z" />
                                                         </svg>

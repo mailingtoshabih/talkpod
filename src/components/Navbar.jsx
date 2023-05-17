@@ -66,7 +66,7 @@ export const Navbar = () => {
                         <div className="flex justify-between my-auto border-2 border-gray-300 p-[0.1rem] sm:pr-[0.1rem] rounded-lg space-x-3"
                             onClick={() => setLogout(!logout)}>
                             <img src={user?.pic} alt=""
-                                className="rounded-md h-10 sm:h-12 sm:w-12 object-cover" />
+                                className="rounded-md h-10 w-10 sm:h-12 sm:w-12 object-cover" />
 
                             <p className="hidden sm:block font-semibold text-md sm:text-lg md:text-xl my-auto text-gray-600 cursor-pointer"
                             >

@@ -3,12 +3,12 @@ import { Navbar } from "./Navbar"
 import { Link } from 'react-router-dom'
 import left from "../assets/left.png"
 import right from "../assets/right.png"
-
+import "../pages/Registering/style.css"
 
 
 export const Welcomecard = () => {
     return (
-        <div className='h-screen border bg-hero bg-no-repeat bg-cover bg-center bg-fixed'>
+        <div id="go" className='sm:border'>
             {/* <Navbar /> */}
 
 

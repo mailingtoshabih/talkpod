@@ -69,7 +69,7 @@ export const Email = () => {
 
     return (
         <>
-            <div className='h-screen border bg-hero bg-no-repeat bg-cover bg-center bg-fixed'>
+            <div id="go">
 
 
                 <p className='mt-20 h-fit text-violet-950 font-extrabold text-7xl

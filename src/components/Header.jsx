@@ -21,12 +21,6 @@ export const Header = () => {
 
 
 
-
-
-
-
-
-
     return (
         <div className='p-2'>
 

@@ -30,7 +30,7 @@ export const Name = ({ onNext }) => {
 
 
   return (
-    <div className="h-screen border bg-hero bg-no-repeat bg-cover bg-center bg-fixed">
+    <div id="go">
       {/* <Navbar /> */}
 
 

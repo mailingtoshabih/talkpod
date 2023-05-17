@@ -9,7 +9,7 @@ export const Loader = () => {
            <p className='w-fit mx-auto p-5 text-5xl sm:text-7xl font-extrabold 
            text-gray-200 animate-pulse'>Talkpod</p>
            
-            <div className='border h-screen w-full  text-white mx-auto text-center duration-1000
+            <div className='h-screen w-10/12  text-white mx-auto text-center duration-700
                 my-2 p-5'>
                 
 

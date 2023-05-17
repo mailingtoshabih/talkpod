@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { toggleModal } from "../../app/modalSlice"
 
@@ -10,21 +10,20 @@ import { toggleModal } from "../../app/modalSlice"
 export const Header = () => {
 
     const dispatch = useDispatch();
-
     const [search, setSearch] = useState("");
 
 
 
-
-
-
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+    
 
 
     return (
         <div className='p-2'>
 
-            <div className='p-2 mb-5 bg-gradient-to-r from-green-100 to-rose-100 rounded-xl'>
+            <div className='p-2 mb-5 bg-gradient-to-r from-green-100 to-rose-100 rounded-xl hover:shadow-2xl hover:shadow-green-200 duration-700'>
 
                 <div className='p-1 space-x-5 flex justify-between'>
 
@@ -42,15 +41,14 @@ export const Header = () => {
                         </button>
                     </div>
 
-                    <div className='hidden sm:flex space-x-3'>
 
+                    <div className='hidden sm:flex space-x-3'>
                         <button onClick={() => dispatch(toggleModal(true))}
-                            className='hidden md:flex w-fit h-12  my-3 mx-auto p-2 px-3 text-center rounded-full text-white font-semibold border-4 border-white  bg-gradient-to-r from-violet-950 to-purple-950 hover:border-violet-700 hover:bg-violet-500 hover:text-white hover:shadow-2xl hover:shadow-violet-500 duration-700'>
+                            className='hidden md:flex w-fit h-12  my-3 mx-auto p-2 px-3 text-center rounded-full text-white font-semibold border-4 border-white bg-gradient-to-r from-violet-950 to-purple-950 hover:border-violet-700 hover:bg-violet-500 hover:text-white hover:shadow-2xl hover:shadow-violet-500 duration-700'>
                             <p className='hidden md:flex'>Start a podcast</p>
                             <p className="flex md:hidden">Podcast</p>
                         </button>
                     </div>
-
 
                 </div>
 
@@ -63,7 +61,7 @@ export const Header = () => {
                         Public Podcasts
                     </p>
 
-                    <p className={`block mt-10 sm:hidden text-gray-500 my-auto font-semibold text-xl`}>
+                    <p className={`block mt-10 sm:hidden text-gray-600 my-auto font-bold text-xl`}>
                         Podcasts
                     </p>
 
@@ -74,7 +72,7 @@ export const Header = () => {
                             Start a podcast
                         </button>
                     </div>
-
+ 
                 </div>
 
             </div>

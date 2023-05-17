@@ -3,7 +3,8 @@ import { Navbar } from '../components/Navbar'
 import { Header } from '../components/Header'
 import { Roomcard } from '../components/Roomcard'
 import { Startmodel } from '../components/Startmodel'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setClient } from "../../app/clientSlice";
 import axios from "axios"
 import { useParams, useNavigate } from 'react-router-dom'
 import { useWebrtc } from '../hooks/useWebrtc'
@@ -13,19 +14,24 @@ const backend = import.meta.env.VITE_APP_BACKEND;
 
 export const Room = () => {
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
     const { id: roomId } = useParams();
-    const user = useSelector((state) => state.auth.user)
+    const user = useSelector((state) => state.auth.user);
+
     const { clients, provideRef, handleMute } = useWebrtc(roomId, user);
 
-
+    clients && dispatch(setClient(clients));
+    
 
     const [room, setRoom] = useState("");
+    
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const search = async () => {
             const res = await axios.post(backend + "/room/getroom", { id: roomId });
-            res && setRoom(res.data);
+            res && setRoom(res.data);    
         }
         search();
     }, [roomId])
@@ -110,6 +116,8 @@ export const Room = () => {
                                     </div>
 
                                     <div className='mt-3 font-semibold text-gray-600'>
+                                        
+
                                         {client?.name}
 
                                         <div className='my-2 mx-auto w-fit'

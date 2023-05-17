@@ -25,6 +25,7 @@ export const Allrooms = () => {
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const searchRooms = async () => {
       const res = await axios.get(backend + "/room/getrooms");
       res && setRooms(res.data.reverse());
@@ -49,11 +50,9 @@ export const Allrooms = () => {
           lg:grid-cols-3 xl:grid-cols-4 shrink-0'>
 
               {
-
                 rooms.map((r) => {
                   return <Roomcard data={r} key={r._id} />
                 })
-
               }
 
             </div>
@@ -61,7 +60,7 @@ export const Allrooms = () => {
           <Load />}
 
 
-        {/* <Footer /> */}
+        <Footer />
         {toggle && <Startmodel />}
 
       </div>

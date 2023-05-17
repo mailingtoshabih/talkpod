@@ -3,6 +3,7 @@ import authSlice from "./authSlice"
 import activationSlice from './activationSlice';
 import modalSlice from './modalSlice';
 import modeSlice from './modeSlice';
+import clientSlice from './clientSlice';
 
 
 
@@ -13,7 +14,8 @@ export const store = configureStore({
         auth : authSlice,
         activation : activationSlice,
         toggle : modalSlice,
-        mode : modeSlice
+        mode : modeSlice,
+        client : clientSlice
     }
 })
 

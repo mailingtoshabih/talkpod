@@ -1,5 +1,5 @@
 import nopicture from "../assets/nopicture.png"
-import logo from "../assets/default.jpg"
+import logo from "../assets/default.jpeg"
 import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import { setAuth } from "../../app/authSlice";
@@ -68,20 +68,20 @@ export const Navbar = () => {
                             <img src={user?.pic} alt=""
                                 className="rounded-md h-10 w-10 sm:h-12 sm:w-12 object-cover" />
 
-                            <p className="hidden sm:block font-semibold text-md sm:text-lg md:text-xl my-auto text-gray-600 cursor-pointer"
-                            >
+
+                            <p className="hidden sm:block font-semibold text-md sm:text-lg md:text-xl my-auto text-gray-600 cursor-pointer">
                                 {user.name}&nbsp;
                             </p>
 
-                            {logout && <button
-                                className="bg-gradient-to-r from-orange-600 to-red-600 font-semibold text-white px-3 p-1 rounded-md"
-                                onClick={() => dispatch(setAuth(null))}
-                            >
-                                Logout
-                            </button>}
+                            {
+                                logout && <button
+                                    className="bg-gradient-to-r from-orange-600 to-red-600 font-semibold text-white px-3 p-1 rounded-md"
+                                    onClick={() => dispatch(setAuth(null))}>
+                                    Logout
+                                </button>
+                            }
 
                         </div>
-
                     }
 
 

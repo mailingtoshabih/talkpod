@@ -25,6 +25,8 @@ export const Room = () => {
     
 
     const [room, setRoom] = useState("");
+
+    room && console.log(room)
     
 
     useEffect(() => {
@@ -70,7 +72,8 @@ export const Room = () => {
 
                 <div className='my-5 sm:my-10 flex justify-between'>
                     <div className='font-semibold text-gray-700 text-xl md:text-2xl xl:text-3xl my-auto'>
-                        {room && room.roomTopic}
+                        {room && room.roomTopic} 
+                     
                         {/* Why Artificial Intelligence is the future? */}
                     </div>
 
@@ -79,7 +82,7 @@ export const Room = () => {
                     </button>
                 </div>
 
-
+               
 
                 {/* change id to _id */}
                 {/* IN room refresh not persisting problems */}

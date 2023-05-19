@@ -11,11 +11,19 @@ export const Welcomecard = () => {
         <div id="go" className='sm:border'>
             {/* <Navbar /> */}
 
+           
 
-            <p className='mt-20 h-fit text-violet-950 font-extrabold text-7xl
+
+            <p className='mt-20 h-fit text-purple-400 font-extrabold text-7xl
                 text-center'>
                 Talkpod
             </p>
+
+            <p className='-mt-[4.3rem] -ml-2 h-fit text-violet-950 font-extrabold text-7xl
+                text-center'>
+                Talkpod
+            </p>
+
 
 
 

@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-const style = `p-3 sm:p-4 w-66 h-60 sm:h-52  font-semibold text-gray-600 rounded-xl cursor-pointer bg-white 
-shadow-[0px_0px_20px_1px_#B2F5EA] hover:shadow-violet-500
-hover:transition duration-700 
-hover:outline hover:outline-violet-800`
+
 
 
 const extractFirstName = (name) => {
@@ -24,12 +21,17 @@ const extractFirstName = (name) => {
 }
 
 function color() {
-  const colors = ['red', 'green', 'violet', 'indigo', 'purple', 'orange', 'yellow', 'rose']
-  return colors[Math.floor(Math.random() * 10) + 1];
+  const c = ['red', 'green', 'violet', 'indigo', 'purple', 'orange', 'yellow', 'rose']
+  return c[Math.floor(Math.random() * c.length) + 1];
 }
+const c = color();
 
 
 
+const style = `p-3 sm:p-4 w-66 h-60 sm:h-52  font-semibold text-gray-600 rounded-xl cursor-pointer bg-white 
+shadow-[0px_0px_20px_1px_#B2F5EA] hover:shadow-xl hover:shadow-violet-600
+hover:transition duration-700 
+hover:outline hover:outline-violet-700`
 
 
 
@@ -53,7 +55,7 @@ export const Roomcard = ({ data }) => {
 
         {/* Room topic */}
         <div className=' h-1/6  text-md sm:text-sm'>
-          {data?.roomTopic} gas to this greater wok of interest that is. Greater extent
+          {data?.roomTopic}
         </div>
 
 
@@ -62,13 +64,13 @@ export const Roomcard = ({ data }) => {
 
           <div className="w-full flex justify-between">
 
-            <div className="flex -space-x-7 w-4/6 py-2">
+            <div className="flex -space-x-7 w-4/6 py-2 ">
               {/* change it to one single room topic picture, make modal, route, and more */}
               {/* and description, for links and more */}
 
               <img
-                className={`h-full shadow-xl shadow-${color()}-500 rounded-xl object-cover`}
-                src={clients[0] ? logo : logo} alt="" />
+                className={`h-full rounded-xl object-cover`}
+                src={data?.pic} alt="" />
 
             </div>
 
@@ -82,18 +84,19 @@ export const Roomcard = ({ data }) => {
                 <p className="text-violet-600 font-extrabold my-1 text-md md:text-md">Speakers</p>
 
                 <div className="flex space-x-1">
-                  <hr className="bg-green-400 w-1 h-1 rounded my-auto " />
-                  <span>{clients && extractFirstName(clients[0]?.name)}</span>
-                </div>
-                <div className="flex space-x-1">
-                  <hr className="bg-green-400 w-1 h-1 rounded my-auto " />
-                  <span>{clients && extractFirstName(clients[0]?.name)}</span>
-                </div>
-                <div className="flex space-x-1">
-                  <hr className="bg-green-400 w-1 h-1 rounded my-auto " />
+                  {clients[0] && <hr className="bg-green-400 w-1 h-1 rounded my-auto " />}
                   <span>{clients && extractFirstName(clients[0]?.name)}</span>
                 </div>
 
+                <div className="flex space-x-1">
+                  {clients[1] && <hr className="bg-green-400 w-1 h-1 rounded my-auto " />}
+                  <span>{clients[1] && extractFirstName(clients[1]?.name)}</span>
+                </div>
+
+                <div className="flex space-x-1">
+                  {clients[2] && <hr className="bg-green-400 w-1 h-1 rounded my-auto " />}
+                  <span>{clients[2] && extractFirstName(clients[0]?.name)}</span>
+                </div>
 
               </div>
 

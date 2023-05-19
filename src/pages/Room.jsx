@@ -58,7 +58,10 @@ export const Room = () => {
 
     // mute not working
 
-
+    function color() {
+        const c = ['red', 'green', 'violet', 'indigo', 'purple', 'orange', 'yellow', 'rose']
+        return c[Math.floor(Math.random() * c.length) + 1];
+    }
 
 
 
@@ -72,11 +75,11 @@ export const Room = () => {
             <div className='mt-20 h-screen p-2 sm:px-10 max-w-7xl mx-auto'>
 
 
-                <div className='my-5 sm:my-10 flex justify-between'>
+                <div className='flex justify-between'>
                     <div className='font-semibold w-full md:w-4/6 md:pl-5 text-gray-700 text-xl md:text-2xl xl:text-3xl my-auto'>
 
-                        <div className='w-full block md:hidden '>
-                            <img className='w-full  rounded-lg' src={room && room.pic} alt="" />
+                        <div className='w-full block md:hidden'>
+                            <img className='w-full rounded-lg' src={room && room.pic} alt="" />
                         </div>
 
                         <div className='my-5'>
@@ -85,7 +88,7 @@ export const Room = () => {
                             </p>
 
 
-                            <p className='my-2 text-sm md:text-md text-gray-500'>
+                            <p className='my-2 text-sm md:text-lg text-gray-500'>
                                 {room && room.roomDesc}
                             </p>
 
@@ -139,7 +142,7 @@ export const Room = () => {
                                     >
                                     </audio>
 
-                                    <div className='border-4 border-purple-300 rounded-xl h-28 w-28 mx-auto'>
+                                    <div className={`border-4 rounded-xl h-28 w-28 mx-auto`}>
                                         <img src={client?.pic}
                                             alt=""
                                             className='rounded-lg h-full w-full object-cover' />

@@ -69,7 +69,7 @@ export const Roomcard = ({ data }) => {
               {/* and description, for links and more */}
 
               <img
-                className={`h-full rounded-xl object-cover`}
+                className={`h-full rounded-xl object-cover `}
                 src={data?.pic} alt="" />
 
             </div>

@@ -75,7 +75,7 @@ export const Startmodel = () => {
 
 
                 {/* modal card */}
-                <div className='z-50 relative mt-5 w-full sm:w-[25rem] p-6 sm:p-8 text-white mx-auto bg-gradient-to-r from-violet-950  to-purple-600 rounded-lg hover:shadow-2xl hover:shadow-violet-700  duration-1000' >
+                <div className='z-50 relative mt-10 sm:mt-5  w-full sm:w-[25rem] p-6 sm:p-8 text-white mx-auto bg-gradient-to-r from-violet-950  to-purple-600 rounded-lg hover:shadow-2xl hover:shadow-violet-700  duration-1000' >
 
                     <div className='flex justify-between'>
                         <p className='font-semibold text-md sm:text-lg'>Enter Your Podcast Topic</p>

@@ -9,7 +9,7 @@ export const socketInit = () => {
         timeout: 10000,
         transports: ['websocket'],
     };
-    return io('http://localhost:5500', options);
+    return io('https://talkpod.onrender.com', options);
 };
 
 // export default socketInit;

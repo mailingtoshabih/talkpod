@@ -46,8 +46,9 @@ export const Allrooms = () => {
         {rooms ?
           (
             <div className='p-2 mb-10 w-full
-          grid gap-5 grid-cols-2  
-          lg:grid-cols-3 xl:grid-cols-4 shrink-0'>
+          grid gap-2 md:gap-5 grid-cols-1
+          sm:grid-cols-2
+          lg:grid-cols-3 xl:grid-cols-3 shrink-0'>
 
               {
                 rooms.map((r) => {

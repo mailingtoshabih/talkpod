@@ -22,18 +22,18 @@ export const Room = () => {
     const { clients, provideRef, handleMute } = useWebrtc(roomId, user);
 
     clients && dispatch(setClient(clients));
-    
+
 
     const [room, setRoom] = useState("");
 
     room && console.log(room)
-    
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
         const search = async () => {
             const res = await axios.post(backend + "/room/getroom", { id: roomId });
-            res && setRoom(res.data);    
+            res && setRoom(res.data);
         }
         search();
     }, [roomId])
@@ -68,21 +68,48 @@ export const Room = () => {
             <Navbar />
 
 
-            <div className='h-screen mt-20 p-2 sm:px-10 max-w-7xl mx-auto'>
+
+            <div className='mt-20 h-screen p-2 sm:px-10 max-w-7xl mx-auto'>
+
 
                 <div className='my-5 sm:my-10 flex justify-between'>
-                    <div className='font-semibold text-gray-700 text-xl md:text-2xl xl:text-3xl my-auto'>
-                        {room && room.roomTopic} 
-                     
-                        {/* Why Artificial Intelligence is the future? */}
+                    <div className='font-semibold w-full md:w-4/6 md:pl-5 text-gray-700 text-xl md:text-2xl xl:text-3xl my-auto'>
+
+                        <div className='w-full block md:hidden '>
+                            <img className='w-full  rounded-lg' src={room && room.pic} alt="" />
+                        </div>
+
+                        <div className='my-5'>
+                            <p>
+                                {room && room.roomTopic}
+                            </p>
+
+
+                            <p className='my-2 text-sm md:text-md text-gray-500'>
+                                {room && room.roomDesc}
+                            </p>
+
+
+                            <button className="block md:hidden mt-4 text-xs sm:text-sm w-fit h-12 p-1 px-4 text-center rounded-full text-white font-semibold  bg-gradient-to-r from-orange-600 to-red-600 shadow-lg hover:shadow-2xl shadow-orange-600 hover:shadow-orange-600 duration-700" onClick={() => navigate(-1)}>
+                                Leave Room
+                            </button>
+
+                        </div>
+
+
+                        <button className="hidden md:block my-2 text-xs sm:text-sm w-fit h-12 p-1 px-4 text-center rounded-full text-white font-semibold  bg-gradient-to-r from-orange-600 to-red-600 shadow-lg hover:shadow-2xl shadow-orange-600 hover:shadow-orange-600 duration-700" onClick={() => navigate(-1)}>
+                            Leave Room
+                        </button>
                     </div>
 
-                    <button className="text-xs sm:text-sm w-fit h-12 p-1 px-4 text-center rounded-full text-white font-semibold  bg-gradient-to-r from-orange-600 to-red-600 shadow-lg hover:shadow-2xl shadow-orange-600 hover:shadow-orange-600 duration-700" onClick={() => navigate(-1)}>
-                        Leave Room
-                    </button>
+                    <div className='hidden md:block w-2/6'>
+                        <img className='w-full rounded-lg' src={room && room.pic} alt="" />
+                    </div>
+
                 </div>
 
-               
+
+
 
                 {/* change id to _id */}
                 {/* IN room refresh not persisting problems */}
@@ -119,7 +146,7 @@ export const Room = () => {
                                     </div>
 
                                     <div className='mt-3 font-semibold text-gray-600'>
-                                        
+
 
                                         {client?.name}
 

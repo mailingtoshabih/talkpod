@@ -29,7 +29,7 @@ const c = color();
 
 
 const style = `p-3 sm:p-4 w-66 h-60 sm:h-52  font-semibold text-gray-600 rounded-xl cursor-pointer bg-white 
-shadow-[0px_0px_20px_1px_#B2F5EA] hover:shadow-xl hover:shadow-violet-600
+shadow-[0px_0px_20px_1px_#B2F5EA] hover:shadow-xl hover:shadow-violet-400
 hover:transition duration-700 
 hover:outline hover:outline-violet-700`
 
